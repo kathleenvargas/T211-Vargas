@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration Form</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href= "stylesheet.css ">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="login-form">    
+    <form action="/examples/actions/confirmation.php" method="post">
+		
+    	<h4 class="title">Account Registration</h4>
+        <div class="form-group">
+            <input type="text" id="username" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="text" id="fname" class="form-control"placeholder="First Name" required="required">
+        </div>
+        <div class="form-group">
+            <input type="text" id="midname"class="form-control" placeholder="Middle Name" required="required">
+        </div>
+        <div class="form-group">
+            <input type="text" id="lname" class="form-control" placeholder="Last Name" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" required="required">
+        </div>
+
+
+        <div class="form-group small clearfix">
+            <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
+
+        </div> 
+
+            <button class="btn btn-primary" id="register" >Register</button>   
+            <a class="btn btn-primary" href="index.html">Signin</a>  
+
+    </form>			
+    
+</div>
+</body>
+    <script>
+        $("#register") .click(function() {
+            let username = $("#username") .val();
+            let fname = $("#fname") .val();
+            let midname = $("#midname") .val();
+            let lname = $("#lname") .val();
+            let password = $("#password") .val();
+            let confirm_password = $("#confirm_password") .val();
+            if ( password === confirm_password){
+                alert(username + "-" + fname + "-" + midname + "-" + lname + "-" + password);
+                return true;
+            }
+            else{
+                alert("password did not match");
+            }
+            
+        });
+
+    </script>
+</html>                                		
